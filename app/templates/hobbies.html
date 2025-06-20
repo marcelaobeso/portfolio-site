@@ -15,7 +15,7 @@
         rel="stylesheet">
 
     <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
-    <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
+    <link rel='icon' href='./static/img/icons/favicon.ico' type='image/x-icon' />
     <title>{{ title }}</title>
 </head>
 
@@ -27,20 +27,32 @@
                     <img src="./static/img/logo.svg" />
                 </div>
             </a>
+            
         </div>
     </header>
 
     <div class="profile">
         <div id="profile-picture" class="profile-picture">
-            <img src="./static/img/logo.jpg">
+            <img src="{{ picture }}">
         </div>
         <h1>{{ title }}</h1>
     </div>
+    <a href="/">
+                <div class="home-icon">
+                    <img src="../static/img/icons/home.svg" alt="Home" width="30" height="30">
+                </div>
+            </a>
     <div class="content">
         <h2>Hobbies</h2>
-        <ul>
+        <ul class="wrapper">
             {% for hobbie in list %}
-            <li>{{ hobbie }}</li>
+            <div class="card">
+                <img src="{{ hobbie.img_url }}" alt="{{ hobbie.name }}">
+                <li>{{ hobbie.name }}</li>
+                {% if hobbie.description %}
+                    <p>{{ hobbie.description }}</p>
+                {% endif %}
+            </div>
             {% endfor %}
         </ul>
     </div>

@@ -4,7 +4,6 @@
         "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     "picture": "static/img/Profile_avatar_placeholder_large.png",
-
     "education":{
         "entry 1":{
             "name": "Example college",
@@ -14,19 +13,47 @@
             "grade": "First Class Honours",
             "skills": "skill 1, skill 2, skill 3, skill 4"
         }
-    }
+    },
     "title": "Name Of the Developer",
-    "hobbies-list": {
-        "title": "Hobbies",
-        "content": [
-            "Hiking",
-            "Photography",
-            "Cooking",
-            "Music",
-            "Reading",
-            "Traveling",
-            "Coding",
-            "Gaming"
-        ]
-    }    
+    "hobbies-list": [
+        {
+            "name": "Hiking",
+            "img_url": "../static/img/hobbies/Hiking.png",
+            "description": "Exploring nature trails and enjoying the great outdoors."
+        },
+        {
+            "name": "Photography",
+            "img_url": "../static/img/hobbies/Reading.png",
+            "description": "Capturing moments and landscapes through the lens."
+        },
+        {
+            "name": "Cooking",
+            "img_url": "../static/img/hobbies/Cooking.png",
+            "description": "Experimenting with recipes and creating delicious meals."
+        },
+        {
+            "name": "Music",
+            "img_url": "../static/img/hobbies/Hiking.png",
+            "description": "Listening to and playing various musical instruments."
+        },
+        {
+            "name": "Reading",
+            "img_url": "../static/img/hobbies/Reading.png",
+            "description": "Diving into books across different genres."
+        },
+        {
+            "name": "Traveling",
+            "img_url": "../static/img/hobbies/Cooking.png"
+        },
+        {
+            "name": "Coding",
+            "img_url": "../static/img/hobbies/Hiking.png",
+            "description": "Building software and solving problems through programming."
+        },
+        {
+            "name": "Gaming",
+            "img_url": "../static/img/hobbies/Cooking.png",
+            "description": "Playing video games for fun and relaxation."
+        }
+    ]
 }
