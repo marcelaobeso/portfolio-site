@@ -2,7 +2,7 @@ import os
 import json
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
-from education import education_entry
+from app.education import education_entry
 
 load_dotenv()
 app = Flask(__name__)
