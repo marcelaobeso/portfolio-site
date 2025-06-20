@@ -31,6 +31,3 @@ def index():
                            grade=edu_1.grade,
                            skills =edu_1.skills,
                            url=os.getenv("URL"))
-
-app.run()
-
