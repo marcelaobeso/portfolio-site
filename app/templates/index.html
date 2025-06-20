@@ -32,13 +32,23 @@
 
     <div class="profile">
         <div id="profile-picture" class="profile-picture">
-            <img src="./static/img/logo.jpg">
+            <img src="{{ picture }}">
         </div>
         <h1>{{ title }}</h1>
     </div>
     <div class="content">
         <h2>About Me</h2>
         <p>{{ about }}</p>
+    </div>
+    <div class="education">
+        <hr>
+        <h2>Education</h2>
+        <h3>{{institute_name }}</h3>
+        <h4>{{degree}}</h4>
+        <p><i>{{grade}}</i></p>
+        <p id="dates">{{start_date}} - {{end_date}}</p>
+        <p><b>Skills Learned:</b></p>
+        <p>{{skills}}</p>
     </div>
 </body>
 </html>
