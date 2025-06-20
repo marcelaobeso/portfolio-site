@@ -104,3 +104,29 @@ body {
     margin: 1rem;
     padding: 1rem;
 }
+
+.education {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 0px;
+}
+
+.education h2{
+    line-height: 3;
+
+}
+
+#dates{
+    font-size: 12px;
+}
+
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:#000000;
+    height: 1px;
+  }
