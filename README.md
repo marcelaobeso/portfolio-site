@@ -32,7 +32,25 @@ For each of these tasks, you should create an [Issue](https://docs.github.com/en
 
 ## Getting Started
 
-You need to do all your progress here.
+### Photo of yourself.
+
+The placeholder photo and location which it is to be specified in have been changed for easier access. It has been moved to the content.json along with the rest of the program's input in an effort to make updating the website more painless.
+
+### About yourself.
+The user is able to specify the title and content of the "About Yourself" section in the content.json file.
+
+### Work Experience.
+The ability to seamlessly add work experience has been accomplished by using html and jinja and the content.json allowing those sections the user to painlessly add as any jobs as they like, there is a default value for the job's end date, setting it to "present".
+
+### Hobbies
+A seperate page listing the hobbies featuring images and descriptions has been added, the description has an empty string as a default value in case the user does not want to describe a given hobby. Like work experience, any amount of hobbies can be added to the site seamlessly without compromising its functionality. 
+
+### Education
+The education section allows users to specify their previous education in varying levels of detail. The end date variable has a default value of present for those still in education. In addition, the grade and skills sections are also optional.
+
+### Travel Map
+The travel map has been added to the home page, allowing the site owner to specify any number of visited countries using the content.json to specify the country name and location on the map.
+
 
 ## Installation
 
