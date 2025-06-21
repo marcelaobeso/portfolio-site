@@ -3,31 +3,37 @@ import json
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 from app.education import education_entry
+from app.hobby import hobby_entry
+from app.job import job_entry
 
 load_dotenv()
 app = Flask(__name__)
 with open('./app/static/content/content.json', 'r', encoding='utf-8') as file:
-    content = json.load(file)
+    data = json.load(file)
+    about, title, hobbies_list, picture, edu_list, job_list = data["about"], data["title"], data["hobbies-list"], data["picture"], data["education"], data["jobs"]
 
-edu_1_json = content["education"]["entry 1"]
-
-edu_1 = education_entry(edu_1_json["name"], 
-                        edu_1_json["degree"], 
-                        edu_1_json["start_date"], 
-                        edu_1_json["end_date"], 
-                        edu_1_json["grade"], 
-                        edu_1_json["skills"])
-
+edu_items, job_items, hobbies_items = [], [], []
+for hobby in hobbies_list:
+    hobbies_items.append(hobby_entry(**hobby))
+    
+for edu in edu_list:
+    edu_items.append(education_entry(**edu))
+    
+for job in job_list:
+    job_items.append(job_entry(**job))
+    
 @app.route('/')
 def index():
-    return render_template('index.html', 
-                           title=content["title"], 
-                           about=content["about"]["content"], 
-                           picture=content["picture"],
-                           institute_name=edu_1.name,
-                           degree=edu_1.degree,
-                           start_date=edu_1.start_date,
-                           end_date=edu_1.end_date,
-                           grade=edu_1.grade,
-                           skills =edu_1.skills,
+    return render_template('index.html',
+                           title=title,
+                           about=about["content"],
+                           picture=data["picture"],
+                           edu_items=edu_items,
+                           job_items=job_items,
                            url=os.getenv("URL"))
+
+@app.route('/hobbies', methods=['GET'])
+def hobbies():
+    return render_template('hobbies.html', picture=data["picture"],  title=title, hobbieTitle="Hobbies", list=hobbies_items, url=os.getenv("URL"))
+
+app.run()
