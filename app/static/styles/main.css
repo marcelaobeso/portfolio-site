@@ -142,7 +142,7 @@ hr {
     align-items: center;
     justify-items: center;
     margin: 1rem;
-    max-width: 300px;
+    max-width: 250px;
     border: #1C539F;
     border-radius: 10px;
     border-style: solid;
@@ -155,13 +155,25 @@ hr {
     object-fit: cover;
     border-radius: 10px;
 }
-.home-icon {
-    max-width: 50px;
-    max-height: 50px;
+.menu-icon {
+    display: flex;
+    align-items: center;
+    flex-direction: row; 
     position: absolute;
     top: 1rem;
     right: 1rem;
+    gap: 0.5rem;
 }
+.menu-icon a {
+    text-decoration: none;
+    color: #eceff3;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.menu-icon a:visited {
+    color: #eceff3;
+}
+
 .icon-links {
     border-radius: 10px;
     border: 2px solid #1C539F;
