@@ -55,5 +55,66 @@
             "img_url": "../static/img/hobbies/Cooking.png",
             "description": "Playing video games for fun and relaxation."
         }
+    ],
+    "travels": [
+        {
+            "name": "Guatemala",
+            "top": "40.55%",
+            "left": "26.92%" },
+        { 
+            "name": "Mexico",
+            "top": "35.78%",
+            "left": "24.16%"
+        },
+        { 
+            "name": "Honduras",
+            "top": "41.65%",
+            "left": "29.25%"
+        },
+        { 
+            "name": "El Salvador",
+            "top": "42.57%",
+            "left": "28.5%"
+        },
+        { 
+            "name": "Peru",
+            "top": "55.7%",
+            "left": "31.17%"
+        },
+        { 
+            "name": "Colombia",
+            "top": "45.69%",
+            "left": "31.75%"
+        },
+        {
+            "name": "Ireland",
+            "top": "20.78%",
+            "left": "47.85%"
+        },
+        { 
+            "name": "Spain",
+            "top": "27.71%",
+            "left": "48.83%"
+        },
+        { 
+            "name": "Belgium",
+            "top": "21.83%",
+            "left": "50.75%"
+        },
+        { 
+            "name": "Denmark",
+            "top": "19.08%",
+            "left": "52.25%"
+        },
+        { 
+            "name": "Austria",
+            "top": "22.94%",
+            "left": "53.58%"
+        },
+        { 
+            "name": "Slovakia",
+            "top": "22.75%",
+            "left": "54.17%"
+        }
     ]
 }

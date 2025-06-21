@@ -168,3 +168,56 @@ hr {
     border: 2px solid #1C539F;
     padding: 0.5rem;
 }
+
+.map {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 1em;
+    position: relative;
+}
+.map img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.label {
+    position: absolute;
+    background: #1C539F;
+    width: 0.4em;
+    height: 0.4em;
+    border-radius: 50%;
+}
+.label::before{
+    content: '';
+    position: absolute;
+    background: #1C539F;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: pulse 1.3s ease-in-out infinite;
+}
+.label span {
+    display: inline-block;
+    white-space: nowrap;
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    border-radius: 5px;
+    padding: 0.1rem 0.1rem;
+    font-size: 0.8rem;
+}
+
+@keyframes pulse {
+    100% {
+        opacity: 0;
+        transform: 
+        translate(-50%, -50%)
+        scale(2.5);
+    }
+}
