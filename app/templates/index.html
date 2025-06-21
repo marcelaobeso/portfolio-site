@@ -40,15 +40,28 @@
         <h2>About Me</h2>
         <p>{{ about }}</p>
     </div>
-    <div class="education">
+    <div class="entry-series" >
         <hr>
-        <h2>Education</h2>
-        <h3>{{institute_name }}</h3>
-        <h4>{{degree}}</h4>
-        <p><i>{{grade}}</i></p>
-        <p id="dates">{{start_date}} - {{end_date}}</p>
-        <p><b>Skills Learned:</b></p>
-        <p>{{skills}}</p>
+        <h2>Education:</h2>
+        {% for edu in edu_items %}
+            <h3>{{edu.name }}</h3>
+            <h4>{{edu.degree}}</h4>
+            <p><i>{{edu.grade}}</i></p>
+            <p id="dates">{{edu.start_date}} - {{edu.end_date}}</p>
+            <p><b>Skills Learned:</b></p>
+            <p>{{edu.skills}}</p>
+        {% endfor %}
+    </div>
+    <div class="entry-series">
+        <hr>
+        <h2>Work Experience:</h2>
+        {% for job in job_items %}
+            <h3>{{job.title }}</h3>
+            <h4>{{job.company_name}}</h4>
+            <p id="dates">{{job.start_date}} - {{job.end_date}}</p>
+            <p><b>Description:</b></p>
+            <p><i>{{job.description}}</i></p>
+        {% endfor %}
     </div>
     <div class="content">
         <hr>

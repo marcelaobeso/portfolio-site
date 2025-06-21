@@ -4,8 +4,8 @@
         "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     "picture": "static/img/Profile_avatar_placeholder_large.png",
-    "education":{
-        "entry 1":{
+    "education":[
+        {
             "name": "Example college",
             "degree": "Example Degree",
             "start_date": "11-11-11",
@@ -13,7 +13,16 @@
             "grade": "First Class Honours",
             "skills": "skill 1, skill 2, skill 3, skill 4"
         }
-    },
+    ],
+
+    "jobs": [
+        {
+            "title": "Production Engineer Fellow",
+            "company_name": "Meta x Major League Hacking",
+            "start_date": "16-06-2025",
+            "description": "Learned and practiced PE skills.\nRecieved mentorship from Meta PEs."
+        }
+    ],
     "title": "Name Of the Developer",
     "hobbies-list": [
         {

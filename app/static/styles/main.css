@@ -108,7 +108,7 @@ body {
     padding: 1rem;
 }
 
-.education {
+.entry-series {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,9 +116,8 @@ body {
     line-height: 0px;
 }
 
-.education h2{
+.entry-series h2{
     line-height: 3;
-
 }
 
 #dates{
