@@ -35,5 +35,3 @@ def index():
 @app.route('/hobbies', methods=['GET'])
 def hobbies():
     return render_template('hobbies.html', picture=data["picture"],  title=title, hobbieTitle="Hobbies", list=hobbies_items, url=os.getenv("URL"))
-
-app.run()
