@@ -42,13 +42,13 @@ The user is able to specify the title and content of the "About Yourself" sectio
 ### Work Experience.
 The ability to seamlessly add work experience has been accomplished by using html and jinja and the content.json allowing those sections the user to painlessly add as any jobs as they like, there is a default value for the job's end date, setting it to "present".
 
-### Hobbies
+### Hobbies.
 A seperate page listing the hobbies featuring images and descriptions has been added, the description has an empty string as a default value in case the user does not want to describe a given hobby. Like work experience, any amount of hobbies can be added to the site seamlessly without compromising its functionality. 
 
-### Education
+### Education.
 The education section allows users to specify their previous education in varying levels of detail. The end date variable has a default value of present for those still in education. In addition, the grade and skills sections are also optional.
 
-### Travel Map
+### Travel Map.
 The travel map has been added to the home page, allowing the site owner to specify any number of visited countries using the content.json to specify the country name and location on the map.
 
 
