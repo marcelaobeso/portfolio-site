@@ -12,7 +12,17 @@
             "end_date": "11-11-15",
             "grade": "First Class Honours",
             "skills": "skill 1, skill 2, skill 3, skill 4"
+        },
+
+        {
+            "name": "Example high school",
+            "degree": "Leaving Certificate",
+            "start_date": "11-11-09",
+            "end_date": "11-11-15",
+            "grade": "625 points",
+            "skills": "skill 1, skill 2, skill 3, skill 4"
         }
+        
     ],
 
     "jobs": [
@@ -21,6 +31,14 @@
             "company_name": "Meta x Major League Hacking",
             "start_date": "16-06-2025",
             "description": "Learned and practiced PE skills.\nRecieved mentorship from Meta PEs."
+        },
+
+        {
+            "title": "Software Engineering Intern",
+            "company_name": "A corp",
+            "start_date": "11-03-2025",
+            "end_date": "16-06-2025",
+            "description": "Full stack development."
         }
     ],
     "title": "Name Of the Developer",
