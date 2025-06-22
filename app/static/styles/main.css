@@ -113,11 +113,22 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    line-height: 0px;
 }
 
-.entry-series h2{
-    line-height: 3;
+.container{
+    display: flex;
+    width: 70%;
+    border: #1C539F solid 2px;
+    border-radius: 10px;
+    padding: 1rem 1rem 1rem 5rem;
+    margin-bottom: 2rem;
+}
+.date{
+    padding-top: 1rem;
+}
+.column {
+    flex: 50%;
+    padding-left: 5%;
 }
 
 #dates{
@@ -212,5 +223,11 @@ hr {
         transform: 
         translate(-50%, -50%)
         scale(2.5);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
     }
 }

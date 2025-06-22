@@ -65,23 +65,31 @@
         <hr>
         <h2>Education:</h2>
         {% for edu in edu_items %}
-            <h3>{{edu.name }}</h3>
-            <h4>{{edu.degree}}</h4>
-            <p><i>{{edu.grade}}</i></p>
-            <p id="dates">{{edu.start_date}} - {{edu.end_date}}</p>
-            <p><b>Skills Learned:</b></p>
-            <p>{{edu.skills}}</p>
+        <div class="container">
+            <p id="dates" class="date">{{edu.start_date}} - {{edu.end_date}}</p>
+            <div class="column">
+                <h3>{{edu.name }}</h3>
+                <h4>{{edu.degree}}</h4>
+                <p><i>{{edu.grade}}</i></p>
+                <p><b>Skills Learned:</b></p>
+                <p>{{edu.skills}}</p>
+            </div>
+        </div>
         {% endfor %}
     </div>
     <div class="entry-series" id="experience">
         <hr>
         <h2>Work Experience:</h2>
         {% for job in job_items %}
-            <h3>{{job.title }}</h3>
-            <h4>{{job.company_name}}</h4>
-            <p id="dates">{{job.start_date}} - {{job.end_date}}</p>
-            <p><b>Description:</b></p>
-            <p><i>{{job.description}}</i></p>
+        <div class="container">
+            <p id="dates" class="date">{{job.start_date}} - {{job.end_date}}</p>
+            <div class="column">
+                <h3>{{job.title }}</h3>
+                <h4>{{job.company_name}}</h4>
+                <p><b>Description:</b></p>
+                <p><i>{{job.description}}</i></p>
+            </div>
+        </div>
         {% endfor %}
     </div>
     <div class="content">
