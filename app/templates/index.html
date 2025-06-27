@@ -58,8 +58,11 @@
     </div>
     
     <div class="content">
-        <h2>About Me</h2>
-        <p>{{ about }}</p>
+        <section class="about">
+            <h2>About Me</h2>
+            <p>{{ about }}</p>
+        </section>
+        
     </div>
     <div class="entry-series" id="education">
         <hr>
@@ -70,7 +73,6 @@
             <div class="column">
                 <h3>{{edu.name }}</h3>
                 <h4>{{edu.degree}}</h4>
-                <p><i>{{edu.grade}}</i></p>
                 <p><b>Skills Learned:</b></p>
                 <p>{{edu.skills}}</p>
             </div>
@@ -88,6 +90,8 @@
                 <h4>{{job.company_name}}</h4>
                 <p><b>Description:</b></p>
                 <p><i>{{job.description}}</i></p>
+                <p><b>Skills applied:</b></p>
+                <p>{{job.skills}}</p>
             </div>
         </div>
         {% endfor %}

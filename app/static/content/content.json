@@ -1,28 +1,24 @@
 {
     "about": {
         "title": "About",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        "content": "Typescript certified developer and certified associate. I have experience working with Javascript, React, Next.js, Node.js, Express, Nestjs, databases both relational (SQL, PostgreSQL, MySQL) o non relational (MongoDB). I have worked with scalable applications for global companies and also working with individual clients and small projects."
     },
-    "picture": "static/img/Profile_avatar_placeholder_large.png",
+    "picture": "static/img/profile.jpg",
     "education":[
         {
-            "name": "Example college",
-            "degree": "Example Degree",
-            "start_date": "11-11-11",
-            "end_date": "11-11-15",
-            "grade": "First Class Honours",
-            "skills": "skill 1, skill 2, skill 3, skill 4"
+            "name": "Universidad de San Carlos de Guatemala",
+            "degree": "Bachelor of Science - BSBachelor of Science - BS",
+            "start_date": "2022",
+            "end_date": "2023",
+            "skills": "Engineering, Computer Science"
         },
-
         {
-            "name": "Example high school",
-            "degree": "Leaving Certificate",
-            "start_date": "11-11-09",
-            "end_date": "11-11-15",
-            "grade": "625 points",
-            "skills": "skill 1, skill 2, skill 3, skill 4"
+            "name": "Universidad de San Carlos de Guatemala",
+            "degree": "Mechanical Electrical Engineering",
+            "start_date": "2011",
+            "end_date": "2013",
+            "skills": "Mechanical Engineering, Capacidad de análisis"
         }
-        
     ],
 
     "jobs": [
@@ -30,57 +26,100 @@
             "title": "Production Engineer Fellow",
             "company_name": "Meta x Major League Hacking",
             "start_date": "16-06-2025",
-            "description": "Learned and practiced PE skills.\nRecieved mentorship from Meta PEs."
+            "description": "Learned and practiced PE skills.\nRecieved mentorship from Meta PEs.",
+            "skills": "Production Engineering, Python, Linux, Systems Design, Debugging, Problem Solving, Attention to Detail, Continuous Integration and Continuous Delivery (CI/CD), Git"
         },
-
         {
-            "title": "Software Engineering Intern",
-            "company_name": "A corp",
-            "start_date": "11-03-2025",
-            "end_date": "16-06-2025",
-            "description": "Full stack development."
+            "title": "Applications Developer",
+            "company_name": "Telus Digital",
+            "start_date": "Feb 2023",
+            "end_date": "May 2024",
+            "description": "In charge of developing full web applications using technologies as Reactjs, NextJs, NodeJs, Typescript, etc",
+            "skills": "TypeScript, Continuous Integration and Continuous Delivery, Engineering, Google Cloud Platform, Jest, Next.js, Node.js, GitHub Actions, Micro Frontends, Attention to Detail, Debugging, Webpack, Microfrontends (MFEs)"
+        },
+        {
+            "title": "Fullstack web applications developer intern",
+            "company_name": "Telus Digital",
+            "start_date": "Sep 2022",
+            "end_date": "Jan 2023",
+            "description": "Completed a series of modules that included the development of applications such as todos, photo albums, budget managers and others to apply different technologies and testing libraries.",
+            "skills": "Apps Testing, styled-components, Containerization, NestJS, Jest, Git, CSS , Babel.js, GitHub, Soluciones web, Kubernetes, Attention to Detail, Continous Integration and Continous Deployment (CI/CD), Anal, Debugging, HTML, Problem Solving, Webpack, Redux.js, SQL, Docker, Bitbucket, PostgreSQL"
+        },
+        {
+            "title": "Assistant Content Manager",
+            "company_name": "Dylunios",
+            "start_date": "Mar 2021",
+            "end_date": "Oct 2021",
+            "description": "Worked mainly with CMSs such as WordPress or Gazela, where I had create and update web pages and their new entries.",
+            "skills": "Capacidad de análisis, Resolución de problemas, Atención al detalle, Soluciones web"
+        },
+        {
+            "title": "Junior Software Developer",
+            "company_name": "Hummingbird Tecnología",
+            "start_date": "Jun 2018",
+            "end_date": "Oct 2018",
+            "description": "Junior java script developer as front end for web applications",
+            "skills": "Git, Soluciones web, Attention to Detail, Capacidad de análisis, Resolución de problemas, Redux.js, SQL"
         }
+
+
     ],
-    "title": "Name Of the Developer",
+    "title": "Marcela Obeso",
     "hobbies-list": [
         {
             "name": "Hiking",
-            "img_url": "../static/img/hobbies/Hiking.png",
+            "img_url": "../static/img/hobbies/Hiking.jpg",
             "description": "Exploring nature trails and enjoying the great outdoors."
         },
         {
-            "name": "Photography",
-            "img_url": "../static/img/hobbies/Reading.png",
-            "description": "Capturing moments and landscapes through the lens."
+            "name": "Woodworking",
+            "img_url": "../static/img/hobbies/Wood.jpg",
+            "description": "Crafting toys and furniture pieces from wood."
         },
         {
-            "name": "Cooking",
-            "img_url": "../static/img/hobbies/Cooking.png",
-            "description": "Experimenting with recipes and creating delicious meals."
+            "name": "Fermenting",
+            "img_url": "../static/img/hobbies/Fermenting.jpg",
+            "description": "Experimenting with fermentation to create delicious foods and drinks."
         },
         {
-            "name": "Music",
-            "img_url": "../static/img/hobbies/Hiking.png",
-            "description": "Listening to and playing various musical instruments."
+            "name": "Whittling",
+            "img_url": "../static/img/hobbies/Whittling.jpg",
+            "description": "Carving wood into just because sometimes I find something looks like a cup, then it should be a cup."
         },
         {
-            "name": "Reading",
-            "img_url": "../static/img/hobbies/Reading.png",
-            "description": "Diving into books across different genres."
+            "name": "Camping",
+            "img_url": "../static/img/hobbies/Camping.jpg",
+            "description": "Spending nights with the wildernesssss, listening the sounds of nature."
+        },
+        
+        {
+            "name": "Trekking",
+            "img_url": "../static/img/hobbies/Trekking.jpg",
+            "description": "Exploring trails and enjoying the beauty of nature."
+        },
+        {
+            "name": "Coding in the wild",
+            "img_url": "../static/img/hobbies/Coding.jpg",
+            "description": "Coding just for fun, when an idea strikes no mather where I am."
+        },
+        {
+            "name": "Learning Languages",
+            "img_url": "../static/img/hobbies/Languages.jpg",
+            "description": "Studying new languages to understand the world through different cultures."
         },
         {
             "name": "Traveling",
-            "img_url": "../static/img/hobbies/Cooking.png"
+            "img_url": "../static/img/hobbies/Traveling.jpg"
         },
         {
-            "name": "Coding",
-            "img_url": "../static/img/hobbies/Hiking.png",
-            "description": "Building software and solving problems through programming."
+            "name": "Reading",
+            "img_url": "../static/img/hobbies/Reading.jpg",
+            "description": "Diving into books across different genres."
         },
         {
-            "name": "Gaming",
-            "img_url": "../static/img/hobbies/Cooking.png",
-            "description": "Playing video games for fun and relaxation."
+            "name": "Cycling",
+            "img_url": "../static/img/hobbies/Cycling.jpg",
+            "description": "Cycling wherever I can and enjoying the fresh air."
         }
     ],
     "travels": [
