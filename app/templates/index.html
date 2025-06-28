@@ -20,52 +20,42 @@
 </head>
 
 <body>
-    <header class="nav-bar">
-        <div class="nav-content">
-            <a href="/">
-                <div class="nav-logo">
-                    <img src="./static/img/logo.svg" />
-                </div>
-            </a>
-            <a href="/hobbies" class="menu-icon">
-                <div class="nav-content">
-                    <span>Hobbies<img class="icon-nav" src="../static/img/icons/hobby.png" alt="Hobbies"></span>
-                </div>
-            </a>
-            <a href="#education" class="menu-icon">
-                <div class="nav-content">
-                    <span>Education<img class="icon-nav" src="../static/img/icons/education.png" alt="Education"></span>
-                </div>
-            </a>
-            <a href="#experience" class="menu-icon">
-                <div class="nav-content">
-                    <span>Experience<img class="icon-nav" src="../static/img/icons/experience.png" alt="Experience"></span>
-                </div>
-            </a>
-            <a href="#trips" class="menu-icon">
-                <div class="nav-content">
-                    <span>Travel<img class="icon-nav" src="../static/img/icons/travel.png" alt="World icon"></span>
-                </div>
-            </a>
-        
-    </header>
-
-    <div class="profile">
-        <div id="profile-picture" class="profile-picture">
-            <img src="{{ picture }}">
+    <header>
+        <div class="profile">
+            <div id="profile-picture" class="profile-picture">
+                <img src="{{ picture }}">
+            </div>
+            <h1>{{ title }}</h1>
         </div>
-        <h1>{{ title }}</h1>
-    </div>
+        </div>
+    </header>
+    <nav>
+        <div class="nav-content">
+            <a href="/hobbies">
+                <span>Hobbies<img class="icon-nav" src="../static/img/icons/hobby.png" alt="Hobbies"></span>
+            </a>
+        </div>
+        <div class="nav-content">
+            <a href="#experience">
+                <span>Experience<img class="icon-nav" src="../static/img/icons/experience.png" alt="Experience"></span>
+            </a>
+        </div>
+        <div class="nav-content">
+            <a href="#trips">
+                <span>Travel<img class="icon-nav" src="../static/img/icons/travel.png" alt="World icon"></span>
+            </a>
+        </div>
+    </nav>
+
     
-    <div class="content">
+    <div class="clearcontent">
         <section class="about">
             <h2>About Me</h2>
             <p>{{ about }}</p>
         </section>
         
     </div>
-    <div class="entry-series" id="education">
-        <hr>
+    <div class="darkcontent" id="education">
         <h2>Education:</h2>
         {% for edu in edu_items %}
         <div class="container">
@@ -79,8 +69,7 @@
         </div>
         {% endfor %}
     </div>
-    <div class="entry-series" id="experience">
-        <hr>
+    <div class="clearcontent" id="experience">
         <h2>Work Experience:</h2>
         {% for job in job_items %}
         <div class="container">
@@ -96,15 +85,13 @@
         </div>
         {% endfor %}
     </div>
-    <div class="content">
-        <hr>
+    <div class="darkcontent" id="hobbies">
         <h2>Hobbies</h2>
         <div class="content">
             <p>Check here other things I'm interested in: <a href="/hobbies" class="icon-links">Hobbies -></a></p>   
         </div>
     </div>
-    <div class="content" id="trips">
-        <hr>
+    <div class="clearcontent" id="trips">
         <h2>Travel Map</h2>
         <p>Some of the places I've been to!</p>
         <div class="map">
