@@ -20,29 +20,24 @@
 </head>
 
 <body>
-    <header class="nav-bar">
+        <header>
+        <div class="profile">
+            <div id="profile-picture" class="profile-picture">
+                <img src="{{ picture }}">
+            </div>
+            <h1>{{ title }}</h1>
+        </div>
+        </div>
+    </header>
+    <nav>
         <div class="nav-content">
             <a href="/">
-                <div class="nav-logo">
-                    <img src="./static/img/logo.svg" />
-                </div>
+                <span>Home<img class="icon-nav" src="../static/img/icons/home.png" alt="Home"></span>
             </a>
-            <a href="/" class="menu-icon">
-                <div class="nav-content">
-                    <span>Home<img class="icon-nav" src="../static/img/icons/home.png" alt="Menu"></span>
-                </div>
-            </a>
-        </div>        
-    </header>
-
-    <div class="profile">
-        <div id="profile-picture" class="profile-picture">
-            <img src="{{ picture }}">
         </div>
-        <h1>{{ title }}</h1>
-    </div>
+    </nav>
 
-    <div class="content">
+    <div class="clearcontent">
         <h2>Hobbies</h2>
         <ul class="wrapper">
             {% for hobbie in list %}
