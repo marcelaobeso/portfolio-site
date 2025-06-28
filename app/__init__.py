@@ -29,7 +29,6 @@ for country in travels:
 
 @app.route('/')
 def index():
-    theme = request.cookies.get('theme', 'light')
     return render_template('index.html',
                            title=title,
                            about=about["content"],
