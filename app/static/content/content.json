@@ -14,11 +14,10 @@
         },
 
         {
-            "name": "Example high school",
+            "name": "Colaiste An Chraoibhin",
             "degree": "Leaving Certificate",
-            "start_date": "11-11-09",
-            "end_date": "11-11-15",
-            "grade": "625 points",
+            "start_date": "19-16",
+            "end_date": "04-21",
             "skills": "skill 1, skill 2, skill 3, skill 4"
         }
         
