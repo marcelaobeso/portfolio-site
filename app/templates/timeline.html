@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+    <link lang='sass' rel="stylesheet" href="./static/styles/timeline.css">
+    <link lang="sass" rel="stylesheet" href="./static/styles/main.css">
+
+    <link rel='icon' href='./static/img/icons/favicon.ico' type='image/x-icon' />
+    <title>{{ title }}</title>
+</head>
+<body>
+    <header>
+        <h1 style="color: white;">Timeline</h1>
+        <nav>
+            <div class="nav-content">
+                <a href="/hobbies">
+                    <span>Hobbies<img class="icon-nav" src="../static/img/icons/hobby.png" alt="Hobbies"></span>
+                </a>
+            </div>
+            <div class="nav-content">
+                <a href="/">
+                    <span>Home<img class="icon-nav" src="../static/img/icons/home.png" alt="Home"></span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <form id="postForm" class="form-container" action="/api/timeline_post" method="POST">
+            <h2>Share your thoughts</h2>
+            <p>Fill in the form below to post your thoughts on the timeline.</p>
+            <div class="row">
+                <div class="col-20">
+                    <label for="name">Name:</label>
+                </div>
+                <div class="col-70">
+                    <input name="name" type="text"  placeholder="Your name" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-20">
+                    <label for="content">Content:</label>
+                </div>
+                <div class="col-70">
+                    <textarea name="content" type="text" cols="40" rows="10" placeholder="What do you want to share?" required></textarea>
+                </div>
+                <div class="col-20">
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-70">
+                    <input name="email" type="email" placeholder="Your email" required>
+                    <p>We will not share your email with anyone.</p>
+                </div>
+            </div>
+            <div>
+                <button type="submit" value="Submit">Submit</button>
+                <p id="errorMessage" class="error-message">There was an error submitting your post. Please try again later.</p>
+                <p id="succesMessage" class="success-message">Your post has been submitted successfully!</p>
+            </div>
+
+            
+        </form> 
+        <section class="timeline">
+            {% for post in posts %}
+            <article class="timeline-post">
+                <span class="date">{{ post.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</span>
+                <div>
+                    <p>{{ post.content }}</p>
+                    <div class="author">
+                        <h2>{{ post.name }}</h2>
+                        <p>{{ post.email }}</p>
+                    </div>
+                    
+                </div>
+                </article>
+            {% endfor %}
+        </section>
+        <script>
+            const formElement = document.querySelector("#postForm")
+            const errorMessage = document.querySelector("#errorMessage")
+            const successMessage = document.querySelector("#successMessage")
+            async function sendData(data){
+
+                try {
+                    errorMessage.style.display = "none"
+                    errorMessage.textContent = ""
+                    const response = fetch('http://127.0.0.1:5000/api/timeline_post', { 
+                        method: "POST",
+                        body: data
+
+                    })
+                } catch (e) {
+                    console.error("Error sending data:", e)
+                    errorMessage.style.display = "block"
+                    setTimeout(() => {
+                        errorMessage.style.display = "none"
+                    }, 5000)
+
+                } finally {
+                    formElement.reset()
+                    successMessage.style.display = "block"
+                    setTimeout(() => {
+                        successMessage.style.display = "none"
+                    }, 5000)
+                    
+                }
+            }
+
+            formElement.addEventListener("submit", (event)=>{
+                event.preventDefault()
+
+                const formData = new FormData(formElement);
+                formData.append("name", formElement.name.value)
+                formData.append("content", formElement.content.value)
+                formData.append("email", formElement.email.value)
+                sendData(formData)
+
+            })
+
+
+
+        </script>
+    </main>
+</html>
