@@ -5,11 +5,17 @@ from peewee import MySQLDatabase, CharField, TextField, DateTimeField, Model
 from playhouse.shortcuts import model_to_dict
 from dotenv import load_dotenv
 from app.entries import edu_items, job_items, hobbies_items, country_list, about
+from flask import Flask
+from flask_cors import CORS
+
 
 load_dotenv()
 
 # Initialize Flask app
 app = Flask(__name__)
+
+CORS(app, resources={r"/api/*": {"origins": f'http://${os.getenv("URL")}'}})
+
 # Initialize MySQL database connection
 # Ensure you have the MySQL server running and the database created
 mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
