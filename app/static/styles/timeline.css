@@ -96,17 +96,19 @@ button:hover {
     padding: 2rem 0 2rem;
 
 }
-.error-message {
+.errormessage {
     background-color: rgb(255, 165, 165);
     border: solid 1px #ff4f4f;
     font-size: 1.2rem;
     margin-top: 1rem;
-    display: none
+    padding: 2rem;
+    display: none;
 }
-.success-message {
+.successmessage {
     background-color: rgb(190, 255, 190);
     border: solid 1px #01b434;
     font-size: 1.2rem;
     margin-top: 1rem;
-    display: none
+    padding: 2rem;
+    display: none;
 }

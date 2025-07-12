@@ -28,7 +28,7 @@
     </header>
 
     <main>
-        <form id="postForm" class="form-container">
+        <form id="postForm" class="form-container" action="/api/timeline_post" method="POST">
             <h2>Share your thoughts</h2>
             <p>Fill in the form below to post your thoughts on the timeline.</p>
             <div class="row">
@@ -57,9 +57,10 @@
             </div>
             <div>
                 <button type="submit" value="Submit">Submit</button>
-                <p id="errorMessage" class="error-message">There was an error submitting your post. Please try again later.</p>
-                <p id="succesMessage" class="success-message">Your post has been submitted successfully!</p>
+                
             </div>
+            <p class="errormessage">There was an error submitting your post. Please try again later.</p>
+            <p class="successmessage">Your post has been submitted successfully!</p>
 
             
         </form> 
@@ -80,17 +81,14 @@
         </section>
         <script>
             const formElement = document.querySelector("#postForm")
-            const errorMessage = document.querySelector("#errorMessage")
-            const successMessage = document.querySelector("#successMessage")
-
+            const errorMessage = document.querySelector(".errormessage")
+            const successMessage = document.querySelector(".successmessage")
             async function sendData(data){
+
                 try {
-                    errorMessage?.style.display = "none"
-                    errorMessage.textContent = ""
                     const response = fetch('http://localhost:5000/api/timeline_post', { 
                         method: "POST",
                         body: data
-
                     })
                 } catch (e) {
                     console.error("Error sending data:", e)
@@ -104,7 +102,9 @@
                     successMessage.style.display = "block"
                     setTimeout(() => {
                         successMessage.style.display = "none"
+
                     }, 5000)
+
                     
                 }
             }
@@ -117,7 +117,10 @@
                 formData.append("content", formElement.content.value)
                 formData.append("email", formElement.email.value)
                 sendData(formData)
+
             })
+
+
 
         </script>
     </main>
