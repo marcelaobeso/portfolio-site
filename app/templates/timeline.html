@@ -28,7 +28,7 @@
     </header>
 
     <main>
-        <form id="postForm" class="form-container" action="/api/timeline_post" method="POST">
+        <form id="postForm" class="form-container">
             <h2>Share your thoughts</h2>
             <p>Fill in the form below to post your thoughts on the timeline.</p>
             <div class="row">
@@ -82,8 +82,8 @@
             const formElement = document.querySelector("#postForm")
             const errorMessage = document.querySelector("#errorMessage")
             const successMessage = document.querySelector("#successMessage")
-            async function sendData(data){
 
+            async function sendData(data){
                 try {
                     errorMessage?.style.display = "none"
                     errorMessage.textContent = ""
@@ -117,10 +117,7 @@
                 formData.append("content", formElement.content.value)
                 formData.append("email", formElement.email.value)
                 sendData(formData)
-
             })
-
-
 
         </script>
     </main>
