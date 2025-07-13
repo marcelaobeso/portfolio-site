@@ -160,6 +160,26 @@ hr {
     padding: 1rem 0.5rem;
     
 }
+.timeline_header{
+    align-items: center;
+    justify-items: center;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+  }
+.timeline .card {
+    align-items: center;
+    justify-items: center;
+    margin: 0.75rem;
+    max-width: 250px;
+    border: #301934;
+    border-radius: 10px;
+    border-style: solid;
+    padding: 0.5rem 0.25rem;
+    
+}
 .wrapper .card img {
     max-width: inherit;
     max-height: 100%;
@@ -216,6 +236,15 @@ hr {
     padding: 0.1rem 0.1rem;
     font-size: 0.8rem;
 }
+
+.vert-align {
+    display: flex;
+    justify-content: space-around; /* aligns the items horizontally */
+    align-items: center; /* aligns the items vertically */
+    height: 100px;
+    background-color: #fff;
+    color: #000000;
+  }
 
 @keyframes pulse {
     100% {
