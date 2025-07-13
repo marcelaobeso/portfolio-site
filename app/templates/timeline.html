@@ -86,13 +86,8 @@
             async function sendData(data){
 
                 try {
-                    const response = fetch('http://localhost:5000/api/timeline_post', { 
+                    const response = fetch('http://marcela.duckdns.org:5000/api/timeline_post', { 
                         method: "POST",
-                        headers:{
-                            'Content-Type': 'multipart/form-data',
-                            'Access-Control-Allow-Origin': '*',
-                            'Access-Control-Allow-Methods': 'POST'
-                        },
                         body: data
                     })
                 } catch (e) {
@@ -122,9 +117,6 @@
                 sendData(formData)
 
             })
-
-
-
         </script>
     </main>
 </html>
