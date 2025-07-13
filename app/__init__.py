@@ -6,6 +6,7 @@ from peewee import MySQLDatabase, CharField, TextField, DateTimeField, Model
 from playhouse.shortcuts import model_to_dict
 from dotenv import load_dotenv
 from app.entries import edu_items, job_items, hobbies_items, country_list, about
+from flask import make_response
 
 
 load_dotenv()
@@ -60,8 +61,13 @@ def post_timeline_post():
     email = request.form['email']
     content = request.form['content']
     timeline_post = TimeLinePost.create(name=name, email=email, content=content)
-
-    return model_to_dict(timeline_post), 201
+    
+    response = make_response(model_to_dict(timeline_post), 201)
+    response.headers['Content-Type'] = 'multipart/form-data'
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Methods'] = 'POST'
+    return response
+    #  return model_to_dict(timeline_post), 201
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_timeline_posts():
