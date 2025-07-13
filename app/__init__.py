@@ -13,7 +13,6 @@ load_dotenv()
 # Initialize Flask app
 app = Flask(__name__)
 
-# CORS(app, resources={r"/api/*": {"origins": [os.getenv("DOMAIN"), f"http://{os.getenv('URL')}"]}})
 
 # Initialize MySQL database connection
 # Ensure you have the MySQL server running and the database created
