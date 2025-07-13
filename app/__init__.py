@@ -9,10 +9,10 @@ from app.entries import edu_items, job_items, hobbies_items, country_list, about
 
 
 load_dotenv()
-
 # Initialize Flask app
 app = Flask(__name__)
 
+CORS(app)  # Enable CORS for all routes
 
 # Initialize MySQL database connection
 # Ensure you have the MySQL server running and the database created
@@ -53,7 +53,6 @@ def hobbies():
     return render_template('hobbies.html', picture=about.picture,  title=about.title, hobbieTitle="Hobbies", list=hobbies_items, coutries=country_list, url=os.getenv("URL"))
 
 @app.route('/api/timeline_post', methods=['POST'])
-@cross_origin(origins=[os.getenv("DOMAIN"), f"http://{os.getenv('URL')}"])
 def post_timeline_post():
     print('request.form:', request.form)
     name = request.form['name']
@@ -79,7 +78,6 @@ def delete_timeline_post(post_id):
         return {'error': 'Post not found'}, 404
     
 @app.route('/timeline', methods=['GET'])
-@cross_origin(origins=[os.getenv("DOMAIN"), f"http://{os.getenv('URL')}"])
 def timeline():
 
     timeline_posts = TimeLinePost.select().order_by(TimeLinePost.created_at.desc())
