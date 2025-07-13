@@ -1,6 +1,6 @@
 import os
 import datetime
-from flask_cors import CORS
+from flask_cors import cross_origin, CORS
 from flask import Flask, render_template, request
 from peewee import MySQLDatabase, CharField, TextField, DateTimeField, Model
 from playhouse.shortcuts import model_to_dict
@@ -13,14 +13,14 @@ load_dotenv()
 # Initialize Flask app
 app = Flask(__name__)
 
-cors = CORS(app, origins=os.getenv("DOMAIN", "http://localhost:5000"))
+# CORS(app, resources={r"/api/*": {"origins": [os.getenv("DOMAIN"), f"http://{os.getenv('URL')}"]}})
 
 # Initialize MySQL database connection
 # Ensure you have the MySQL server running and the database created
 mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
                      user=os.getenv("MYSQL_USER"),
                      password=os.getenv("MYSQL_PASSWORD"),
-                     host=os.getenv("MYSQL_HOST"), 
+                     host=os.getenv("MYSQL_HOST"),
                      port=3306
 )
 print("Database connection established.")
@@ -54,6 +54,7 @@ def hobbies():
     return render_template('hobbies.html', picture=about.picture,  title=about.title, hobbieTitle="Hobbies", list=hobbies_items, coutries=country_list, url=os.getenv("URL"))
 
 @app.route('/api/timeline_post', methods=['POST'])
+@cross_origin(origins=[os.getenv("DOMAIN"), f"http://{os.getenv('URL')}"])
 def post_timeline_post():
     print('request.form:', request.form)
     name = request.form['name']
