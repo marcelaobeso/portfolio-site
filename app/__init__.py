@@ -13,7 +13,7 @@ load_dotenv()
 # Initialize Flask app
 app = Flask(__name__)
 
-# CORS(app, resources={r"/api/*": {"origins": [os.getenv("DOMAIN"), f"http://{os.getenv('URL')}"]}})
+CORS(app, resources={r"/api/*": {"origins": [os.getenv("DOMAIN"), f"http://{os.getenv('URL')}"]}})
 
 # Initialize MySQL database connection
 # Ensure you have the MySQL server running and the database created
@@ -80,6 +80,7 @@ def delete_timeline_post(post_id):
         return {'error': 'Post not found'}, 404
     
 @app.route('/timeline', methods=['GET'])
+@cross_origin(origins=[os.getenv("DOMAIN"), f"http://{os.getenv('URL')}"])
 def timeline():
 
     timeline_posts = TimeLinePost.select().order_by(TimeLinePost.created_at.desc())
