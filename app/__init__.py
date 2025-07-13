@@ -1,12 +1,11 @@
 import os
 import datetime
+from flask_cors import CORS
 from flask import Flask, render_template, request
 from peewee import MySQLDatabase, CharField, TextField, DateTimeField, Model
 from playhouse.shortcuts import model_to_dict
 from dotenv import load_dotenv
 from app.entries import edu_items, job_items, hobbies_items, country_list, about
-from flask import Flask
-from flask_cors import CORS
 
 
 load_dotenv()
@@ -14,7 +13,7 @@ load_dotenv()
 # Initialize Flask app
 app = Flask(__name__)
 
-CORS(app, resources={r"/api/*": {"origins": f'http://${os.getenv("URL")}'}})
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Initialize MySQL database connection
 # Ensure you have the MySQL server running and the database created
@@ -81,5 +80,6 @@ def delete_timeline_post(post_id):
     
 @app.route('/timeline', methods=['GET'])
 def timeline():
+
     timeline_posts = TimeLinePost.select().order_by(TimeLinePost.created_at.desc())
     return render_template('timeline.html', posts=timeline_posts, url=os.getenv("URL"))
