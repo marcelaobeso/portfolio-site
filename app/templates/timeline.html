@@ -37,8 +37,8 @@
 <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
 <div class="timeline">
 <h2>Timeline</h2>
-<form id ="form">
-  <label for="name">Name</label><br>
+<form id ="form" action="/timeline">
+  <label for="name">Namee</label><br>
   <input type="text" id="name" name="name"><br>
   <label for="Email">Email:</label><br>
   <input type="email" id="email" name="email"><br><br>
@@ -48,8 +48,16 @@
 </form>
 </div> 
 <script>
-  const form = document.getElementById('form');
 
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+  async function timed_reload(){
+    await sleep(500)
+    location.reload(true)
+  }
+  const form = document.getElementById('form');
   form.addEventListener('submit', function(e) {
       // Prevent default behavior:
       e.preventDefault();
@@ -60,9 +68,8 @@
       method: 'POST',
       body: payload,
       })
-      .then(res => res.json())
-      .then(data => console.log(data))
-      .then(location.reload(true))
+      .then(timed_reload())
+
   })
 </script>
 <div class="timeline">
