@@ -86,8 +86,6 @@ def get_time_line_post():
         
     }
 
-
-print(get_time_line_post())
 @app.route('/timeline', methods=['GET'])
 def timeline():
     return render_template('timeline.html', postlist=get_time_line_post()['timeline_posts'] )

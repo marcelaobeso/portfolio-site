@@ -60,7 +60,7 @@
       method: 'POST',
       body: payload,
       })
-      .then(location.reload(true))
+      .then(history.go(0))
   })
 </script>
 <div class="timeline">
@@ -80,10 +80,5 @@
   {% endfor %}
   </ul>
 </div>
-
-
-
-
-
 </body>
 </html>
