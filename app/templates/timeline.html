@@ -36,6 +36,7 @@
 
 <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
 <div class="timeline">
+<div class="timeline">
 <h2>Timeline</h2>
 <form id ="form">
   <label for="name">Name</label><br>
@@ -65,13 +66,18 @@
 </script>
 <div class="timeline">
 <h3>Posts:</h3>
+<h3>Posts:</h3>
   <ul class="timeline_list">
   {% for post in postlist %}
+    <div class="post">
     <div class="post">
       <li></li>
       <span class="name">{{ post.name }}</span><br/>
       <span class="time">{{ post.created_at }}</span>
+      <span class="name">{{ post.name }}</span><br/>
+      <span class="time">{{ post.created_at }}</span>
       <span class="email">{{ post.email }}</span>
+      <hr/>
       <hr/>
       <div class="content">
         <p>{{ post.content }}</p>
@@ -80,6 +86,7 @@
   {% endfor %}
   </ul>
 </div>
+
 
 
 
