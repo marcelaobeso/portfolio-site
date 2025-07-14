@@ -92,5 +92,4 @@ print(get_time_line_post())
 def timeline():
     return render_template('timeline.html', postlist=get_time_line_post()['timeline_posts'] )
 
-TimelinePost.select(TimelinePost.name, TimelinePost.email, TimelinePost.content)
     

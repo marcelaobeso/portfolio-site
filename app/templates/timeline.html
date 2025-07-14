@@ -17,10 +17,25 @@
     <title>{{ title }}</title>
 </head>
 <body>
+  <header class="nav-bar">
+    <div class="nav-content">
+        <a href="/">
+            <div class="nav-logo">
+                <img src="./static/img/logo.svg" />
+            </div>
+        </a>
+        <a href="/" class="menu-icon">
+            <div class="nav-content">
+                <span>Home<img class="icon-nav" src="../static/img/icons/home.png" alt="Menu"></span>
+            </div>
+        </a>
+    </div>
+  </header>
+    
 
 <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
+<div class="timeline">
 <h2>Timeline</h2>
-
 <form action="/api/timeline_post" method="POST">
   <label for="name">Name</label><br>
   <input type="text" id="name" name="name"><br>
@@ -29,18 +44,19 @@
   <label for="content">Content:</label><br>
   <textarea id="content" name="content" rows="5" cols="50"></textarea><br>
   <input type="submit" value="Submit">
-</form> 
+</form>
+</div> 
 
-
-<h3 class="timeline_header">Posts</h3>
 <div class="timeline">
+<h3>Posts:</h3>
   <ul class="timeline_list">
   {% for post in postlist %}
-    <div class="card">
+    <div class="post">
       <li></li>
-      <span class="time">{{ post.name }} | {{ post.created_at }}</span>
-      </br>
+      <span class="name">{{ post.name }}</span><br/>
+      <span class="time">{{ post.created_at }}</span>
       <span class="email">{{ post.email }}</span>
+      <hr/>
       <div class="content">
         <p>{{ post.content }}</p>
       </div>
@@ -48,6 +64,7 @@
   {% endfor %}
   </ul>
 </div>
+
 
 
 
