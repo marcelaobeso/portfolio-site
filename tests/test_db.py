@@ -1,7 +1,10 @@
 import unittest
+import os
 from peewee import *
 
 from app import TimelinePost
+
+os.environ['TESTING'] = 'true'
 
 MODELS = [TimelinePost]
 
@@ -34,4 +37,4 @@ class TestTimelinePost(unittest.TestCase):
         assert posts[0].email == 'john@example.com'
         assert posts[0].content == 'Hello world, I\'m John!'
 
-        
+

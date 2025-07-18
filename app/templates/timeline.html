@@ -36,26 +36,44 @@
 
 <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
 <div class="timeline">
-<h2>Timeline</h2>
-<form id ="form" action="/timeline">
-  <label for="name">Name</label><br>
-  <input type="text" id="name" name="name"><br>
-  <label for="Email">Email:</label><br>
-  <input type="email" id="email" name="email"><br><br>
-  <label for="content">Content:</label><br>
-  <textarea id="content" name="content" rows="5" cols="50"></textarea><br>
-  <input type="submit" value="Submit">
-</form>
+  <h2>Timeline</h2>
+  
+  <form id ="form" action="/timeline">
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="Email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+    <label for="content">Content:</label><br>
+    <textarea id="content" name="content" rows="5" cols="50"></textarea><br>
+    <input type="submit" value="Submit">
+  </form>
+  <p class="errormessage" style="display: none;">{content}</p>
 </div> 
 <script>
-
+  const errorMessage = document.querySelector(".errormessage")
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
-}
+  }
 
   async function timed_reload(){
-    await sleep(250)
+
+    await sleep(2500)
     location.reload(true)
+  }
+  async function postData(payload) {
+    
+    try {
+      const response = await fetch((window.location.href.slice(0, -9) + "/api/timeline_post"), {
+      method: 'POST',
+      body: payload,
+      })
+      const data = await response.json();
+      console.log(data);
+      timed_reload();
+    } catch (error) {
+      errorMessage.textContent = "Missing name, email or content";
+      errorMessage.style.display = "block";
+    }
   }
   const form = document.getElementById('form');
   form.addEventListener('submit', function(e) {
@@ -64,12 +82,8 @@
       // Create payload as new FormData object:
       const payload = new FormData(form);
       // Post the payload using Fetch:
-      fetch((window.location.href.slice(0, -9) + "/api/timeline_post"), {
-      method: 'POST',
-      body: payload,
-      })
-      .then(timed_reload())
-
+      postData(payload);
+      
   })
 </script>
 <div class="timeline">

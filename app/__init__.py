@@ -4,7 +4,7 @@ import datetime
 from peewee import *
 from pprint import pprint
 from playhouse.shortcuts import model_to_dict
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, abort
 from dotenv import load_dotenv
 from app.education import education_entry
 from app.hobby import hobby_entry
@@ -14,9 +14,17 @@ from app.job import job_entry
 load_dotenv()
 app = Flask(__name__)
 
-mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"), user=os.getenv("MYSQL_USER"), password=os.getenv("MYSQL_PASSWORD"), host=os.getenv('MYSQL_HOST'), port=3306)
-
-
+if os. getenv("TESTING" ) == "true" :
+    print( "Running in test mode")
+    mydb = SqliteDatabase( 'file:memory?mode=memory&cache=shared',
+uri=True)
+else:
+    mydb = MySQLDatabase(os. getenv("MYSQL_DATABASE" ),
+        user = os. getenv("MYSQL_USER"),
+        password = os.getenv("MYSQL_PASSWORD" ),
+        host = os. getenv("MYSQL_HOST"),
+        port = 3306
+    )
 
 class TimelinePost(Model):
     name = CharField()
@@ -71,6 +79,11 @@ def post_time_line_post():
     name = request.form['name']
     email = request.form['email']
     content = request.form['content']
+    # Validate input
+    if not name or not content or not email:
+        abort(400, 'Missing name, email or content') 
+    if '@' not in email or '.' not in email.split('@')[-1]:
+        abort(400, 'Invalid email format')
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
     
     return model_to_dict(timeline_post)
