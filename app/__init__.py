@@ -1,8 +1,8 @@
 import os
 import datetime
 from flask_cors import cross_origin, CORS
-from flask import Flask, render_template, request
-from peewee import MySQLDatabase, CharField, TextField, DateTimeField, Model
+from flask import Flask, render_template, request, abort
+from peewee import MySQLDatabase, CharField, TextField, DateTimeField, Model, SqliteDatabase
 from playhouse.shortcuts import model_to_dict
 from dotenv import load_dotenv
 from app.entries import edu_items, job_items, hobbies_items, country_list, about
@@ -16,12 +16,17 @@ CORS(app)  # Enable CORS for all routes
 
 # Initialize MySQL database connection
 # Ensure you have the MySQL server running and the database created
-mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
-                     user=os.getenv("MYSQL_USER"),
-                     password=os.getenv("MYSQL_PASSWORD"),
-                     host=os.getenv("MYSQL_HOST"),
-                     port=3306
-)
+if os.getenv("TESTING") == "true" :
+    print("Running in test mode")
+    mydb = SqliteDatabase('file: memory?mode=memory&cache=shared', uri=True)
+else:
+    mydb = MySQLDatabase (os.getenv("MYSQL_DATABASE"),
+    user=os.getenv("MYSQL_USER"),
+    password=os.getenv("MYSQL_PASSWORD"),
+    host=os.getenv("MYSQL_HOST"),
+    port=3306)
+    
+
 print("Database connection established.")
 print(mydb)
 
@@ -59,6 +64,11 @@ def post_timeline_post():
     name = request.form['name']
     email = request.form['email']
     content = request.form['content']
+    # Validate input
+    if not name or not content or not email:
+        abort(400, 'Missing name, email or content') 
+    if '@' not in email or '.' not in email.split('@')[-1]:
+        abort(400, 'Invalid email format')
     timeline_post = TimeLinePost.create(name=name, email=email, content=content)
 
     return model_to_dict(timeline_post), 201
