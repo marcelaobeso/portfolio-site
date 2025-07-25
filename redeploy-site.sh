@@ -4,15 +4,13 @@ echo $'\nFetching changes from remote repository\n'
 FETCH=$(cd ~/portfolio-site && git fetch && git reset origin/main --hard)
 echo "$FETCH"
 
-echo $'\n\nInstalling dependencies\n'
-PIP=$(source ./python3-virtualenv/bin/activate && pip install -r ~/portfolio-site/requirements.txt)
+echo $'\n\nRemoving Containers\n'
+DOWN=$(docker compose -f docker-compose.prod.yaml down)
 
-echo "$PIP"
+echo "$DOWN"
 
 
-echo $'\nReloading daemon\n'
-$(systemctl daemon-reload)
+echo $'\nStarting containers up\n'
+BUILD=$(docker compose -f docker-compose.prod.yaml up -d)
 
-echo $'\nRestarting service\n'
-$(systemctl restart myportfolio)
-
+echo "$BUILD"
