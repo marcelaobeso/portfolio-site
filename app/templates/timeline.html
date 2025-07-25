@@ -86,7 +86,7 @@
             async function sendData(data){
 
                 try {
-                    const response = fetch('http://marcela.duckdns.org:5000/api/timeline_post', { 
+                    const response = fetch('/api/timeline_post', { 
                         method: "POST",
                         body: data
                     })
