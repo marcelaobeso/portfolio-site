@@ -20,7 +20,7 @@ services:
     image: jonasal/nginx-certbot
     restart: always
     environment:
-      - CERBOT_EMAIL=march.obeso@gmail.com
+      - CERTBOT_EMAIL=march.obeso@gmail.com
     ports:
       - 80:80
       - 443:443
