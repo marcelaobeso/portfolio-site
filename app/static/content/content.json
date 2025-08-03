@@ -1,7 +1,7 @@
 {
     "about": {
         "title": "About",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        "content": "22 Year Old Computer Science Major with an interest in Production Engineering and ML"
     },
     "picture": "static/img/Profile_avatar_placeholder_large.png",
     "education":[
@@ -31,23 +31,8 @@
             "description": "Learned and practiced PE skills.\nRecieved mentorship from Meta PEs."
         }
     ],
-    "title": "Name Of the Developer",
+    "title": "Radnitz Oriastie",
     "hobbies-list": [
-        {
-            "name": "Hiking",
-            "img_url": "../static/img/hobbies/Hiking.png",
-            "description": "Exploring nature trails and enjoying the great outdoors."
-        },
-        {
-            "name": "Photography",
-            "img_url": "../static/img/hobbies/Reading.png",
-            "description": "Capturing moments and landscapes through the lens."
-        },
-        {
-            "name": "Cooking",
-            "img_url": "../static/img/hobbies/Cooking.png",
-            "description": "Experimenting with recipes and creating delicious meals."
-        },
         {
             "name": "Music",
             "img_url": "../static/img/hobbies/Hiking.png",
@@ -57,10 +42,6 @@
             "name": "Reading",
             "img_url": "../static/img/hobbies/Reading.png",
             "description": "Diving into books across different genres."
-        },
-        {
-            "name": "Traveling",
-            "img_url": "../static/img/hobbies/Cooking.png"
         },
         {
             "name": "Coding",
@@ -75,63 +56,9 @@
     ],
     "travels": [
         {
-            "name": "Guatemala",
-            "top": "40.55%",
-            "left": "26.92%" },
-        { 
-            "name": "Mexico",
-            "top": "35.78%",
-            "left": "24.16%"
-        },
-        { 
-            "name": "Honduras",
-            "top": "41.65%",
-            "left": "29.25%"
-        },
-        { 
-            "name": "El Salvador",
-            "top": "42.57%",
-            "left": "28.5%"
-        },
-        { 
-            "name": "Peru",
-            "top": "55.7%",
-            "left": "31.17%"
-        },
-        { 
-            "name": "Colombia",
-            "top": "45.69%",
-            "left": "31.75%"
-        },
-        {
             "name": "Ireland",
             "top": "20.78%",
             "left": "47.85%"
-        },
-        { 
-            "name": "Spain",
-            "top": "27.71%",
-            "left": "48.83%"
-        },
-        { 
-            "name": "Belgium",
-            "top": "21.83%",
-            "left": "50.75%"
-        },
-        { 
-            "name": "Denmark",
-            "top": "19.08%",
-            "left": "52.25%"
-        },
-        { 
-            "name": "Austria",
-            "top": "22.94%",
-            "left": "53.58%"
-        },
-        { 
-            "name": "Slovakia",
-            "top": "22.75%",
-            "left": "54.17%"
         }
     ]
 }
