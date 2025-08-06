@@ -26,9 +26,9 @@ jobs:
                     IdentityFile ~/.ssh/deploy_key.pem
                     StrictHostKeyChecking no
                 END
-                env:
-                    DIGITAL_OCEAN: ${{ secrets.DIGITAL_OCEAN }}
-                    SSH_USER: ${{ secrets.SSH_USER }}
-                    SSH_IP: ${{ secrets.SSH_IP }}
+              env:
+                DIGITAL_OCEAN: ${{ secrets.DIGITAL_OCEAN }}
+                SSH_USER: ${{ secrets.SSH_USER }}
+                SSH_IP: ${{ secrets.SSH_IP }}
             - name: Print working directory
               run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT}} && pwd'
