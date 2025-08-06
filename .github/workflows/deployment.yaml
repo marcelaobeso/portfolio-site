@@ -3,6 +3,12 @@ on:
     push:
         branches: [main]
     workflow_dispatch:
+        inputs:
+            deploy_target:
+                description: 'Environment to run deployment against'
+                type: environment
+                default: 'Production'
+                required: true
 
 jobs:
     test:
@@ -30,5 +36,7 @@ jobs:
                 DIGITAL_OCEAN: ${{ secrets.DIGITAL_OCEAN }}
                 SSH_USER: ${{ secrets.SSH_USER }}
                 SSH_IP: ${{ secrets.SSH_IP }}
-            - name: Print working directory
-              run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT}} && pwd'
+            # - name: Print working directory
+            #   run: ssh my-vps 'cd $secrets.PROJECT_ROOT && pwd'
+            - name: Deploy Site
+              run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && ~/redeploy-site.sh'
