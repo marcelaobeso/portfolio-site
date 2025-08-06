@@ -40,3 +40,32 @@ jobs:
             #   run: ssh my-vps 'cd $secrets.PROJECT_ROOT && pwd'
             - name: Deploy Site
               run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && ~/redeploy-site.sh'
+            - name: Container Status
+              run: ssh my-vps 'docker ps'
+            - name: Check Logs
+              run: ssh my-vps 'docker logs myportfolio'
+            - name: Discord webhook notification
+              run: |
+                RESPONSE=$(curl -H "Content-Type: application/json" -X POST -d '{
+                "username": "GitHub",
+                "content": "@everyone",
+                "embeds": [
+                  {
+                    "type": "rich",
+                    "title": "Deployment Successful",
+                    "description": "Deployment to Production was successful by ${{ github.actor }}",
+                    "color": 339966,
+                    "thumbnail": {
+                      "url": "https://avatars.githubusercontent.com/u/160980408?v=4"
+                    },
+                    "author": {
+                      "name": "${{ github.actor }}",
+                      "url": "https://github.com/${{ github.actor_id }}",
+                      "icon_url": "https://avatars.githubusercontent.com/u/${{ github.actor_id }}?v=4"
+                    },
+                    "url": "https://github.com/${{ github.repository }}"
+                    }
+                    ]
+                  }' ${{ secrets.DISCORD_WEBHOOK }})
+                echo "Webhook server response: $RESPONSE"
+
