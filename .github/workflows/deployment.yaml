@@ -1,0 +1,34 @@
+name: Deploy to Production
+on:
+    push:
+        branches: [main]
+    workflow_dispatch:
+
+jobs:
+    test:
+        uses: ./.github/workflows/test.yml
+    
+    deploy:
+        environment: Production
+        name: Deploy to Production
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: configure SSH
+              run: |
+                mkdir -p ~/.ssh
+                echo "${{ secrets.DIGITAL_OCEAN }}" > ~/.ssh/deploy_key.pem
+                chmod 600 ~/.ssh/deploy_key.pem
+                cat >> ~/.ssh/config <<END
+                Host my-vps
+                    HostName ${{ secrets.SSH_IP}}
+                    User ${{ secrets.SSH_USER }}
+                    IdentityFile ~/.ssh/deploy_key.pem
+                    StrictHostKeyChecking no
+                END
+                env:
+                    DIGITAL_OCEAN: ${{ secrets.DIGITAL_OCEAN }}
+                    SSH_USER: ${{ secrets.SSH_USER }}
+                    SSH_IP: ${{ secrets.SSH_IP }}
+            - name: Print working directory
+              run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT}} && pwd'
