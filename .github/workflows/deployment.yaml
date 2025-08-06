@@ -56,7 +56,7 @@ jobs:
                     "description": "Deployment to Production was successful by ${{ github.actor }}",
                     "color": 339966,
                     "thumbnail": {
-                      "url": "https://avatars.githubusercontent.com/u/160980408?v=4"
+                      "url": "https://github.com/user-attachments/assets/63a02b87-34a4-42d2-8aed-9cd9ce8aca12"
                     },
                     "author": {
                       "name": "${{ github.actor }}",
