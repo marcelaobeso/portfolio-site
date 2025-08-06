@@ -44,7 +44,8 @@ jobs:
               run: ssh my-vps 'docker ps'
             - name: Check Logs
               run: ssh my-vps 'docker logs myportfolio'
-            - name: Discord webhook notification
+            - name: Discord webhook notification for failure
+              if: ${{ failure() }}
               run: |
                 RESPONSE=$(curl -H "Content-Type: application/json" -X POST -d '{
                 "username": "GitHub",
@@ -52,9 +53,9 @@ jobs:
                 "embeds": [
                   {
                     "type": "rich",
-                    "title": "Deployment Successful",
-                    "description": "Deployment to Production was successful by ${{ github.actor }}",
-                    "color": 339966,
+                    "title": "🚨🚨 Deployment Failed 🚨🚨",
+                    "description": "Deployment to Production was unsuccessful, ran by ${{ github.actor }}",
+                    "color": 16711680,
                     "thumbnail": {
                       "url": "https://github.com/user-attachments/assets/63a02b87-34a4-42d2-8aed-9cd9ce8aca12"
                     },
@@ -68,4 +69,30 @@ jobs:
                     ]
                   }' ${{ secrets.DISCORD_WEBHOOK }})
                 echo "Webhook server response: $RESPONSE"
+            - name: Discord webhook notification for success
+              if: ${{ success() }}
+              run: |
+                RESPONSE=$(curl -H "Content-Type: application/json" -X POST -d '{
+                "username": "GitHub",
+                "content": "@everyone",
+                "embeds": [
+                {
+                    "type": "rich",
+                    "title": "Deployment Successful 🚀🚀",
+                    "description": "Deployment to Production successful by ${{ github.actor }}",
+                    "color": 339966,
+                    "thumbnail": {
+                    "url": "https://github.com/user-attachments/assets/63a02b87-34a4-42d2-8aed-9cd9ce8aca12"
+                    },
+                    "author": {
+                    "name": "${{ github.actor }}",
+                    "url": "https://github.com/${{ github.actor_id }}",
+                    "icon_url": "https://avatars.githubusercontent.com/u/${{ github.actor_id }}?v=4"
+                    },
+                    "url": "https://github.com/${{ github.repository }}"
+                    }
+                    ]
+                }' ${{ secrets.DISCORD_WEBHOOK }})
+                echo "Webhook server response: $RESPONSE"
+
 
