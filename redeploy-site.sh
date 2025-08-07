@@ -11,6 +11,6 @@ echo "$DOWN"
 
 
 echo $'\nStarting containers up\n'
-BUILD=$(docker compose -f docker-compose.prod.yaml up -d)
+BUILD=$(docker compose -f docker-compose.prod.yaml up -d --force-recreate)
 
 echo "$BUILD"
