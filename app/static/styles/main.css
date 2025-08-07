@@ -25,6 +25,10 @@ header {
     overflow: auto;
     z-index: -1;
 }
+.logo {
+    width: 25vh;
+    margin: 1rem;
+}
 nav {
     position: fixed;
     display: flex;
@@ -38,19 +42,33 @@ nav {
 }
 
 a {
-    padding: 10px 0px;
     color: #fff;
     text-decoration: none;
     font-size: 1.5em;
     z-index: 10;
     text-transform: uppercase;
 }
-
+.nav-content a{
+    padding: 0.5rem;
+    margin: 4px 0 0px 0;
+    border: solid;
+    border-color: #ffffff;
+    border-width: 1px 0px 1px 1px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px; 
+}
 .nav-content .icon-nav {
     height: 30px;
     width: auto;
     margin-right: 5px;
     margin-left: 5px;
+}
+.nav-content:hover {
+    transform: translateX(-0.5rem);
+    border-bottom: #fff solid 2px;
+    border-bottom-left-radius: 15px;
+    
+    
 }
 
 .profile {

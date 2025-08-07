@@ -1,7 +1,7 @@
 {
     "about": {
         "title": "About",
-        "content": "Typescript certified developer and certified GCP associate. I have experience working with Javascript, React, Next.js, Node.js, Express, Nestjs, databases both relational (SQL, PostgreSQL, MySQL) o non relational (MongoDB). I have worked with scalable applications for global companies and also working with individual clients and small projects."
+        "content": "Hi! I'm a Production Engineer Fellow at MLH and Meta Fellowship. I'm a Typescript certified developer and certified GCP associate. I have experience working with Javascript, React, Next.js, Node.js, Express, Nestjs, databases both relational (SQL, PostgreSQL, MySQL) o non relational (MongoDB). I have worked with scalable applications for global companies and also working with individual clients and small projects. Whenever I can, I like to contribute to open source projects and help others in the community. I am passionate about learning new technologies and improving my skills. I also love woodworking, camping and cycling."
     },
     "picture": "/static/img/profile.jpg",
     "education":[
