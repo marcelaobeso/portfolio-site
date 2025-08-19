@@ -1,6 +1,6 @@
 import os
 import datetime
-from flask_cors import cross_origin, CORS
+from flask_cors import cross_origin
 from flask import Flask, render_template, request, abort
 from peewee import MySQLDatabase, CharField, TextField, DateTimeField, Model, SqliteDatabase
 from playhouse.shortcuts import model_to_dict
@@ -70,9 +70,9 @@ def hobbies():
 def post_timeline_post():
     """Create a new timeline post."""
     print('request.form:', request.form)
-    name = request.form['name']
-    email = request.form['email']
-    content = request.form['content']
+    name = request.form['name'].replace("'", "''")
+    email = request.form['email'].replace("'", "''")
+    content = request.form['content'].replace("'", "''")
     # Validate input
     if not name or not content or not email:
         abort(400, 'Missing name, email or content')
